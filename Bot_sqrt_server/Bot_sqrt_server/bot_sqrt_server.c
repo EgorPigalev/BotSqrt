@@ -36,15 +36,6 @@ int main()
 				printf(" лиент пишет: ");
 				printf(buffer);
 				printf("\n");
-				/*char* istr[2];
-				istr[0] = strtok(buffer, " ");
-				int i = 0;
-				while (istr != NULL)
-				{
-					i++;
-					printf(" % s\n", istr);
-					istr[1] = strtok(NULL, " ");
-				}*/
 				float a = atof(buffer);
 				sprintf(message, "%g", a * a);
 				LPWSTR b = (CHAR*)calloc(size_buffer, sizeof(CHAR));
@@ -55,15 +46,6 @@ int main()
 				{
 					sprintf(message, "я вас не понимаю");
 				}
-				/*
-				if (i > 2)
-				{
-					sprintf(message, L"я вас не понимаю");
-				}
-				*/
-				//printf("\n¬ведите сообщение дл€ клиента: \n");
-				//gets(message);
-
 				buffer = &message;
 				WriteFile(hNamePipe, buffer, size_buffer, &actual_readen, NULL);
 			}
